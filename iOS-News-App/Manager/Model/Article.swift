@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct ArticleResponse: Codable {
-    let source: SourceResponse
-    let author: String
+struct Article: Codable, Identifiable {
+    let id: String = UUID().uuidString
+    let source: Source
+    let author: String?
     let title: String
     let description: String
     let url: String
@@ -17,8 +18,8 @@ struct ArticleResponse: Codable {
     let publishedAt: String
     let content: String
     
-    static var sampleArticleResponse = ArticleResponse(
-        source: SourceResponse.sampleSourceResponse,
+    static var sampleArticleResponse = Article(
+        source: Source.sampleSourceResponse,
         author: "News Writer",
         title: "Breaking News",
         description: "Breaking news breaking news breaking news breaking new",

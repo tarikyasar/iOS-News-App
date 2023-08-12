@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F9E07416-D40A-41F3-83F7-622FAD488371"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "800C472F-D87F-469F-94F6-576BB815682B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-News-App/Views/Screens/NewsList/NewsListScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "NewsListScreen"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "800C472F-D87F-469F-94F6-576BB815682B - e70942f114be9e9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_News_App.NewsListScreen.init() -&gt; iOS_News_App.NewsListScreen"
+                  moduleName = "iOS-News-App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tarikyasar/Developer/ios/iOS-News-App/iOS-News-App/Views/Screens/NewsList/NewsListScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "800C472F-D87F-469F-94F6-576BB815682B - db25991c1f2a859d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_News_App.NewsListScreen.init(viewModel: @autoclosure () -&gt; iOS_News_App.NewsListViewModel) -&gt; iOS_News_App.NewsListScreen"
+                  moduleName = "iOS-News-App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tarikyasar/Developer/ios/iOS-News-App/iOS-News-App/Views/Screens/NewsList/NewsListScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

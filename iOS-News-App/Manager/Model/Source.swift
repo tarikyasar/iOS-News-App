@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct SourceResponse: Codable {
-    let id: String
+struct Source: Codable {
+    let id: String?
     let name: String
     
-    static var sampleSourceResponse = SourceResponse(
+    static var sampleSourceResponse = Source(
         id: "123",
         name: "Source.org"
     )

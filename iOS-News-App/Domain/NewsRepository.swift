@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol NewsRepository {
+
+    func getNews(
+        fromDate: String,
+        searchQuery: String
+    ) -> NewsResponse?
+}
