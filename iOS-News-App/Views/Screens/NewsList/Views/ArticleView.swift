@@ -27,44 +27,34 @@ struct ArticleView: View {
                 )
             }
             
-            
             Text(article.title)
+                .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 20.0).bold())
                 .padding(.bottom, 12)
+                .foregroundColor(Color.black)
             
             Text(article.description)
+                .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 16.0).bold())
                 .padding(.bottom, 32)
+                .foregroundColor(Color.black)
             
             HStack {
                 Text(article.author ?? article.source.name)
+                    .foregroundColor(Color.black)
                 
                 Spacer()
                 
                 Text(formatDate(date: getDateFromString(date: article.publishedAt)!))
+                    .foregroundColor(Color.black)
             }
         }
         .frame(maxWidth: .infinity)
         .padding(16)
         .background(Color.SurfaceColor)
         .cornerRadius(8)
-    }
-    
-    private func getDateFromString(date: String) -> Date? {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        
-        return formatter.date(from: date)
-    }
-    
-    private func formatDate(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
-        
-        return dateFormatter.string(from: date)
     }
 }
 
