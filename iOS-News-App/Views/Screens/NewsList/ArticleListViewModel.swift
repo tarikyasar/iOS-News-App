@@ -34,4 +34,8 @@ class ArticleListViewModel: ObservableObject {
             }
         )
     }
+    
+    func clearSearchText() {
+        self.searchText = ""
+    }
 }

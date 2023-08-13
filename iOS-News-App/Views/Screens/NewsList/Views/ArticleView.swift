@@ -44,11 +44,13 @@ struct ArticleView: View {
             HStack {
                 Text(article.author ?? article.source.name)
                     .foregroundColor(Color.black)
+                    .multilineTextAlignment(.leading)
                 
                 Spacer()
                 
                 Text(formatDate(date: getDateFromString(date: article.publishedAt)!))
                     .foregroundColor(Color.black)
+                    .multilineTextAlignment(.trailing)
             }
         }
         .frame(maxWidth: .infinity)
