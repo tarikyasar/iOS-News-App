@@ -7,16 +7,16 @@
 
 import Foundation
 
-class NewsManager {
+class ArticlesManager {
     
-    func getNews(
+    func getArticles(
         fromDate: String,
         searchQuery: String,
-        _ completion:@escaping (News?, Error?) -> ()
+        _ completion:@escaping (ArticlesResponse?, Error?) -> ()
     ) {
         Bundle.main.fetchData(
             url: "\(API_URL)&from=\(fromDate)&q=\(searchQuery)",
-            model: News.self
+            model: ArticlesResponse.self
         ) { data in
             completion(data, nil)
         } failure: { error in

@@ -33,9 +33,9 @@ struct ArticleListScreen: View {
                 ProgressView()
             } else if (viewModel.error != nil) {
                 Text(viewModel.error?.localizedDescription ?? "An exception occured!")
-            } else if (viewModel.news != nil) {
+            } else if (viewModel.articles != nil) {
                 ScrollView {
-                    ForEach(viewModel.news!.articles) { article in
+                    ForEach(viewModel.articles!) { article in
                         NavigationLink {
                             ArticleDetailScreen(article: article)
                         } label: {
@@ -50,7 +50,7 @@ struct ArticleListScreen: View {
         .navigationTitle("News")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            if (viewModel.news == nil) {
+            if (viewModel.articles == nil) {
                 viewModel.getNews(fromDate: getCurrentDate(), searchQuery: viewModel.searchText)
             }
         }

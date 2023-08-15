@@ -8,9 +8,9 @@
 import Foundation
 
 class ArticleListViewModel: ObservableObject {
-    private let newsManager = NewsManager()
+    private let articlesManager = ArticlesManager()
     
-    @Published var news: News?
+    @Published var articles: [Article]?
     @Published var isLoading: Bool = false
     @Published var error: Error? = nil
     @Published var searchText: String = "ios"
@@ -19,14 +19,14 @@ class ArticleListViewModel: ObservableObject {
         fromDate: String,
         searchQuery: String
     ) {
-        newsManager.getNews(
+        articlesManager.getArticles(
             fromDate: fromDate,
             searchQuery: searchQuery,
             { response, error in
                 DispatchQueue.main.async {
                     self.isLoading = true
                     
-                    self.news = response
+                    self.articles = response?.articles
                     self.error = error
                     
                     self.isLoading = false

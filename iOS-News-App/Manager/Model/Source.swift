@@ -11,7 +11,7 @@ struct Source: Codable {
     let id: String?
     let name: String
     
-    static var sampleSourceResponse = Source(
+    static var sampleSourceData = Source(
         id: "123",
         name: "Source.org"
     )

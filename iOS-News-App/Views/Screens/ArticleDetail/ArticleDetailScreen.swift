@@ -65,6 +65,6 @@ struct ArticleDetailScreen: View {
 
 struct ArticleDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleDetailScreen(article: Article.sampleArticleResponse)
+        ArticleDetailScreen(article: Article.sampleArticleData)
     }
 }

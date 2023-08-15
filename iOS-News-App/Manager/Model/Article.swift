@@ -18,8 +18,8 @@ struct Article: Codable, Identifiable {
     let publishedAt: String
     let content: String
     
-    static var sampleArticleResponse = Article(
-        source: Source.sampleSourceResponse,
+    static var sampleArticleData = Article(
+        source: Source.sampleSourceData,
         author: "News Writer",
         title: "Breaking News",
         description: "Breaking news breaking news breaking news breaking new",
