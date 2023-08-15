@@ -32,6 +32,7 @@ struct ArticleView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 20.0).bold())
                 .padding(.bottom, 12)
+                .padding(.horizontal, 8)
                 .foregroundColor(Color.black)
             
             Text(article.description)
@@ -39,6 +40,7 @@ struct ArticleView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 16.0).bold())
                 .padding(.bottom, 32)
+                .padding(.horizontal, 12)
                 .foregroundColor(Color.black)
             
             HStack {
@@ -52,9 +54,11 @@ struct ArticleView: View {
                     .foregroundColor(Color.black)
                     .multilineTextAlignment(.trailing)
             }
+            .padding(.horizontal, 12)
+            .padding(.bottom, 8)
         }
         .frame(maxWidth: .infinity)
-        .padding(16)
+        .padding(4)
         .background(Color.SurfaceColor)
         .cornerRadius(8)
     }
