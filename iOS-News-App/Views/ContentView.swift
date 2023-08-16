@@ -12,6 +12,9 @@ struct ContentView: View {
         NavigationView {
             ArticleListScreen()
         }
+        .accentColor(Color.PrimaryColor)
+        .background(Color.BackgroundColor)
+        .preferredColorScheme(.dark)
     }
 }
 

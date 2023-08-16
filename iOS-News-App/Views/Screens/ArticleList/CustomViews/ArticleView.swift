@@ -33,7 +33,7 @@ struct ArticleView: View {
                 .font(.system(size: 20.0).bold())
                 .padding(.bottom, 12)
                 .padding(.horizontal, 8)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.OnSurfaceColor)
             
             Text(article.description)
                 .multilineTextAlignment(.leading)
@@ -41,17 +41,17 @@ struct ArticleView: View {
                 .font(.system(size: 16.0).bold())
                 .padding(.bottom, 32)
                 .padding(.horizontal, 12)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.OnSurfaceColor)
             
             HStack {
                 Text(article.author ?? article.source.name)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.OnSurfaceColor)
                     .multilineTextAlignment(.leading)
                 
                 Spacer()
                 
                 Text(formatDate(date: getDateFromString(date: article.publishedAt)!))
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.OnSurfaceColor)
                     .multilineTextAlignment(.trailing)
             }
             .padding(.horizontal, 12)

@@ -10,6 +10,7 @@ import SwiftUI
 struct ArticleListScreen: View {
     @StateObject var viewModel = ArticleListViewModel()
     @State var isSearchPresented = false
+    @State var tag: String? = nil
     
     var body: some View {
         VStack {
@@ -21,12 +22,15 @@ struct ArticleListScreen: View {
                     .transition(.slide)
                     
                     Button(action: {
-                        viewModel.getNews(fromDate: getCurrentDate(), searchQuery: viewModel.searchText)
-                        
-                        isSearchPresented.toggle()
+                        if (viewModel.searchText != "") {
+                            viewModel.getNews(fromDate: getCurrentDate(), searchQuery: viewModel.searchText)
+                            
+                            tag = viewModel.searchText
+                            isSearchPresented.toggle()
+                        }
                     }, label: {
                         Text("Search")
-                            .foregroundColor(Color.blue)
+                            .foregroundColor(viewModel.searchText == "" ? Color.SurfaceColor : Color.PrimaryColor)
                             .bold()
                     })
                 }
@@ -38,9 +42,6 @@ struct ArticleListScreen: View {
                 Text(viewModel.error?.localizedDescription ?? "An exception occured!")
             } else if (viewModel.articles != nil) {
                 ScrollView {
-                    Text("Active Tag: \(viewModel.searchText)")
-                        .foregroundColor(.blue)
-                    
                     ForEach(viewModel.articles!) { article in
                         NavigationLink {
                             ArticleDetailScreen(article: article)
@@ -53,14 +54,21 @@ struct ArticleListScreen: View {
             }
         }
         .padding(12)
-        .navigationTitle("News")
-        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             if (viewModel.articles == nil) {
                 viewModel.getNews(fromDate: getCurrentDate(), searchQuery: viewModel.searchText)
+                
+                tag = viewModel.searchText
             }
         }
         .toolbar {
+            if (tag != nil) {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("#\(tag!)")
+                        .foregroundColor(Color.PrimaryColor)
+                }
+            }
+            
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
                     isSearchPresented.toggle()
@@ -70,7 +78,11 @@ struct ArticleListScreen: View {
                         .transition(.opacity)
                 })
             }
+            
         }
+        .toolbarBackground(Color.BackgroundColor.opacity(0.4))
+        .toolbarColorScheme(.dark)
+        .background(Color.BackgroundColor)
         .environmentObject(viewModel)
         .ignoresSafeArea(edges: .bottom)
     }

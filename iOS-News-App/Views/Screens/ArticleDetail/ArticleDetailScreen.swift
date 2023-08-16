@@ -60,6 +60,7 @@ struct ArticleDetailScreen: View {
             }
         }
         .padding(8)
+        .background(Color.BackgroundColor)
     }
 }
 

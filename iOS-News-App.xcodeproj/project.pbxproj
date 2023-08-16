@@ -144,19 +144,19 @@
 			isa = PBXGroup;
 			children = (
 				713BC0192A88B5FA007B392E /* ArticleDetail */,
-				71EB9CAF2A88007100288B65 /* NewsList */,
+				71EB9CAF2A88007100288B65 /* ArticleList */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		71EB9CAF2A88007100288B65 /* NewsList */ = {
+		71EB9CAF2A88007100288B65 /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
 				71EB9CB42A8806C500288B65 /* CustomViews */,
 				71EB9CB02A88008000288B65 /* ArticleListScreen.swift */,
 				71EB9CB22A88009500288B65 /* ArticleListViewModel.swift */,
 			);
-			path = NewsList;
+			path = ArticleList;
 			sourceTree = "<group>";
 		};
 		71EB9CB42A8806C500288B65 /* CustomViews */ = {
