@@ -18,9 +18,12 @@ struct ArticleListScreen: View {
                     TextField(text: $viewModel.searchText, label: {
                         Text("Enter a keyword")
                     })
+                    .transition(.slide)
                     
                     Button(action: {
                         viewModel.getNews(fromDate: getCurrentDate(), searchQuery: viewModel.searchText)
+                        
+                        isSearchPresented.toggle()
                     }, label: {
                         Text("Search")
                             .foregroundColor(Color.blue)
@@ -35,6 +38,9 @@ struct ArticleListScreen: View {
                 Text(viewModel.error?.localizedDescription ?? "An exception occured!")
             } else if (viewModel.articles != nil) {
                 ScrollView {
+                    Text("Active Tag: \(viewModel.searchText)")
+                        .foregroundColor(.blue)
+                    
                     ForEach(viewModel.articles!) { article in
                         NavigationLink {
                             ArticleDetailScreen(article: article)
@@ -61,7 +67,7 @@ struct ArticleListScreen: View {
                     viewModel.clearSearchText()
                 }, label: {
                     Image(systemName: isSearchPresented ? "xmark" : "magnifyingglass")
-                        .animation(.easeOut, value: isSearchPresented)
+                        .transition(.opacity)
                 })
             }
         }
